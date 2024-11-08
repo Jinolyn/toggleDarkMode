@@ -1,0 +1,55 @@
+
+.container{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+label{
+    width: 300px;
+    height: 100px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 100px;
+    box-shadow: inset 0px 5px 15px rgba(0,0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: .5s;
+}
+label::after{
+    content: '';
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    background: linear-gradient(180deg, orange, rgb(238, 146, 130));
+    border-radius: 90px;
+    transition: .5s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label{
+    background-color: #171717;
+}
+
+input:checked + label::after{
+    left: 290px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label:active::after{
+    width: 160px;
+}
+.dark-mode{
+    background-color: #171717;
+    transition: .5s;
+}
+
+input:checked + label + .background{
+    background-color: #242424;
+}
